@@ -8,6 +8,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -50,8 +51,14 @@ class MainActivity : AppCompatActivity() {
                     }
                     Spacer(modifier = Modifier.padding(top = 10.dp))
                     Text(text = "800 calories", fontSize = 16.sp)
-                    Spacer(modifier = Modifier.padding(top = 10.dp))
+                    Spacer(modifier = Modifier.padding(top = 36.dp))
+                    Button(onClick = { },
+                    modifier = Modifier.align(Alignment.CenterHorizontally),
+                   ) {
+                        Text(text = "Order now")
+                    }
                 }
+
             }
         }
 
