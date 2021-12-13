@@ -5,12 +5,11 @@ import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.gestures.Orientation
-import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Text
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -34,23 +33,28 @@ class MainActivity : AppCompatActivity() {
                 Image(
                     painter = painterResource(id = R.drawable.happy_meal_small),
                     contentDescription = "description",
-                    modifier = Modifier.height(300.dp),
+                    modifier = Modifier.height(250.dp),
                     contentScale = ContentScale.Crop
                 )
-                Column(modifier = Modifier.padding(16.dp)) {
-                    Text(text = "happy meal", fontSize = 24.sp)
+                Column(modifier = Modifier.padding(24.dp)) {
+                    Row (modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween){
+                        Text(text = "happy meal", fontSize = 26.sp)
+                        Text(
+                            text = "$5.99", style = TextStyle(
+                                color = Color.Green,
+                            ),
+                            fontSize = 16.sp,
+                            modifier = Modifier.align(Alignment.CenterVertically)
+                        )
+                    }
                     Spacer(modifier = Modifier.padding(top = 10.dp))
-                    Text(text = "800 calories", fontSize = 24.sp)
+                    Text(text = "800 calories", fontSize = 16.sp)
                     Spacer(modifier = Modifier.padding(top = 10.dp))
-                    Text(
-                        text = "$5.99", style = TextStyle(
-                            color = Color.Green,
-                        ),
-                        fontSize = 24.sp
-                    )
                 }
             }
         }
+
     }
 }
 
