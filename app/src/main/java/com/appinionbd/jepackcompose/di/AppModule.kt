@@ -26,6 +26,8 @@ object AppModule {
             .create(CoinApi::class.java)
     }
 
+    @Provides
+    @Singleton
     fun provideCoinRepository(api:CoinApi) :CoinRepository {
         return CoinRepositoryImpl(api)
     }
